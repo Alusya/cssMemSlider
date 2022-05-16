@@ -1,0 +1,161 @@
+* {
+    margin: 0.5em auto;
+    padding: 0;
+}
+
+body {
+    background-color: #ECCE80;
+    padding: 0;
+}
+
+.container {
+    width: 33rem;  
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 33rem;
+    scroll-behavior: smooth;
+    z-index: 0;
+}
+
+.slider-track {
+    position: relative;
+    display: flex;
+    gap: 6em;
+    transition: 1s all;
+}
+
+img {
+    height: 30rem;
+    width: 33rem;
+    border-radius: 7%;
+    border: 0.7em solid rgb(248, 159, 115);
+    box-sizing: border-box;
+}
+
+p {
+    font-family: 'Lora';
+    font-size: 2em;
+}
+
+#first:checked ~ .slider-container .slider-track {
+    transform: translateX(0);
+}
+
+#second:checked ~ .slider-container .slider-track {
+    transform: translateX(-39rem);
+}
+
+#third:checked ~ .slider-container .slider-track {
+    transform: translateX(-78rem);
+}
+
+#fourth:checked ~ .slider-container .slider-track {
+    transform: translateX(-117rem);
+}
+
+#fifth:checked ~ .slider-container .slider-track {
+    transform: translateX(-156rem);
+}
+
+input {
+    width: 2rem;
+    height: 1.2rem;
+    display: none;
+}
+
+.navigation {
+    margin: 0 auto;
+    display: flex;
+    float: right;
+    margin-top: -8rem;
+    z-index: 100;
+    position: relative;
+}
+
+.bar {
+    width: 20%;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem;
+}
+
+.outer {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 0.5rem;
+    height: 0.5rem;
+    display: block;
+    border-radius: 50%;
+}
+
+
+#first:checked ~ .navigation #label-1 .inner,
+#second:checked ~ .navigation #label-2 .inner, 
+#third:checked ~ .navigation #label-3 .inner,
+#fourth:checked ~ .navigation #label-4 .inner,
+#fifth:checked ~ .navigation #label-5 .inner {
+    background-color: black;
+}
+
+#label-1:hover .outer, 
+#label-2:hover .outer,
+#label-3:hover .outer,
+#label-4:hover .outer,
+#label-5:hover .outer {
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    background-color: black;
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) and (min-width: 320px) {
+    img {
+        width: 20rem;
+        height: 20rem;
+    }
+    .slider-container {
+        overflow: hidden;
+        width: 20rem;
+        scroll-behavior: smooth;
+    }
+    .slide {
+        text-align: center;
+    }
+    p {
+        margin: 4rem auto;
+    }
+    .navigation {
+        float: unset;
+        margin-top: -17rem;
+        width: 50%;
+    }
+    #first:checked ~ .slider-container .slider-track {
+        transform: translateX(0);
+    }
+    
+    #second:checked ~ .slider-container .slider-track {
+        transform: translateX(-26rem);
+    }
+    
+    #third:checked ~ .slider-container .slider-track {
+        transform: translateX(-52rem);
+    }
+    
+    #fourth:checked ~ .slider-container .slider-track {
+        transform: translateX(-78rem);
+    }
+    
+    #fifth:checked ~ .slider-container .slider-track {
+        transform: translateX(-104rem);
+    }
+}
+
