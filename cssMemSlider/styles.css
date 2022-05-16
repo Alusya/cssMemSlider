@@ -117,3 +117,45 @@ input {
     opacity: 0.3;
 }
 
+@media (max-width: 768px) and (min-width: 320px) {
+    img {
+        width: 20rem;
+        height: 20rem;
+    }
+    .slider-container {
+        overflow: hidden;
+        width: 20rem;
+        scroll-behavior: smooth;
+    }
+    .slide {
+        text-align: center;
+    }
+    p {
+        margin: 4rem auto;
+    }
+    .navigation {
+        float: unset;
+        margin-top: -17rem;
+        width: 50%;
+    }
+    #first:checked ~ .slider-container .slider-track {
+        transform: translateX(0);
+    }
+    
+    #second:checked ~ .slider-container .slider-track {
+        transform: translateX(-26rem);
+    }
+    
+    #third:checked ~ .slider-container .slider-track {
+        transform: translateX(-52rem);
+    }
+    
+    #fourth:checked ~ .slider-container .slider-track {
+        transform: translateX(-78rem);
+    }
+    
+    #fifth:checked ~ .slider-container .slider-track {
+        transform: translateX(-104rem);
+    }
+}
+
